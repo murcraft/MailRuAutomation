@@ -1,4 +1,4 @@
-package pages;
+package by.htp.pages;
 
 import org.openqa.selenium.WebDriver;
 
@@ -15,7 +15,4 @@ public abstract class AbstractPage {
 	}
 	
 	public abstract void open(); 
-	
-	
-
 }
