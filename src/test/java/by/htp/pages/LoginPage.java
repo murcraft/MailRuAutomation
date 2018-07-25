@@ -15,6 +15,7 @@ public class LoginPage extends AbstractPage {
 	private WebElement inputLogin; // = Find(By("mailbox__login"));
 	private WebElement  inputPassword; // = By.id("mailbox__password");
 	private WebElement buttonSubmit;
+	private WebElement linkLoggedInUser;
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -39,6 +40,11 @@ public class LoginPage extends AbstractPage {
 		inputPassword = driver.findElement(By.xpath("//input[@class='c0146']"));
 		inputPassword.sendKeys("Klopik123");
 		inputPassword.click();
+	}
+	
+	public String getLoggedInUserName() {
+		linkLoggedInUser = driver.findElement(By.xpath("//i[@id='PH_user-email']"));
+		return linkLoggedInUser.getAttribute("content");
 	}
 	
 

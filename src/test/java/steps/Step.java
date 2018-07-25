@@ -30,13 +30,13 @@ public class Step {
 		loginPage.login(username, password);
 	}
 
-//	public boolean isLoggedIn(String username)
-//	{
-//		LoginPage loginPage = new LoginPage(driver);
-//		String actualUsername = loginPage.getLoggedInUserName().trim().toLowerCase();
-//		logger.info("Actual username: " + actualUsername);
-//		return actualUsername.equals(username);
-//	}
+	public boolean isLoggedIn(String username)
+	{
+		LoginPage loginPage = new LoginPage(driver);
+		String actualUsername = loginPage.getLoggedInUserName().trim().toLowerCase();
+		logger.info("Actual username: " + actualUsername);
+		return actualUsername.equals(username);
+	}
 
 
 
