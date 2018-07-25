@@ -1,5 +1,7 @@
 package by.htp.pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -32,14 +34,19 @@ public class LoginPage extends AbstractPage {
 	}
 	
 	public void login(String username, String pass) {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.switchTo().frame(driver.findElement(By.className("ag-popup__frame__layout__iframe")));
 		inputLogin = driver.findElement(By.xpath("//input[@class='c0146']"));
 		inputLogin.sendKeys("tathtp");
+		
 		buttonSubmit = driver.findElement(By.xpath("//div[@class='c0130 c0131']/descendant::button"));
 		buttonSubmit.click();
+		driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
 		inputPassword = driver.findElement(By.xpath("//input[@class='c0146']"));
 		inputPassword.sendKeys("Klopik123");
-		inputPassword.click();
+		buttonSubmit = driver.findElement(By.xpath("//div[@class='c0130 c0131']/descendant::button"));
+		buttonSubmit.click();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	public String getLoggedInUserName() {
