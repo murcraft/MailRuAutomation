@@ -44,6 +44,8 @@ public class LoginPage extends AbstractPage {
 	
 	public String getLoggedInUserName() {
 		linkLoggedInUser = driver.findElement(By.xpath("//i[@id='PH_user-email']"));
+		String currentUser = linkLoggedInUser.getText();
+		currentUser.matches("^[A-Za-z]*");
 		return linkLoggedInUser.getAttribute("content");
 	}
 	
