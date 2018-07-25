@@ -11,15 +11,15 @@ public class DriverSingleton {
 	
     private static WebDriver driver;
     private static final Logger logger = LogManager.getRootLogger();
-    private static final String WEBDRIVER_GECKO_DRIVER = "webdriver.gecko.driver";
-    private static final String GECKODRIVER_GECKODRIVER_EXE_PATH = ".\\geckodriver\\geckodriver.exe";
+    private static final String WEBDRIVER_CHROME = "webdriver.chrome.driver";
+    private static final String CHROME_PATH = "../../../Applications/chromedriver";
 
     private DriverSingleton(){};
 
 
     public static WebDriver getDriver(){
         if (null == driver){
-            System.setProperty(WEBDRIVER_GECKO_DRIVER, GECKODRIVER_GECKODRIVER_EXE_PATH);
+            System.setProperty(WEBDRIVER_CHROME, CHROME_PATH);
             driver = new ChromeDriver();
             driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
