@@ -8,8 +8,8 @@ import steps.Step;
 public class AutomationTest {
 	
 	private Step steps;
-	private final String USERNAME = "testautomationuser";
-	private final String PASSWORD = "Time4Death!";
+	private final String USERNAME = "tathtp";
+	private final String PASSWORD = "Klopik123";
 
 	@BeforeMethod(description = "Init browser")
 	public void setUp() {
