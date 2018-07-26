@@ -56,6 +56,10 @@ public class Step {
 		composePage.findFrameTextEmail();
 		
 	}
+	
+	public boolean isSendBoxEmpty() {
+		return true;
+	}
 
 
 
