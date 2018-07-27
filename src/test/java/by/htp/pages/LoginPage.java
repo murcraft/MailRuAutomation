@@ -58,8 +58,7 @@ public class LoginPage extends AbstractPage {
 		return currentUser;
 	}
 	
-	public String getUrlMainPage() {
-		
+	public String getUrlMainPage() {		
 		return driver.getCurrentUrl();
 	}
 	

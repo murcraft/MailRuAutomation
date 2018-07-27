@@ -45,5 +45,10 @@ public class ComposeMessage extends AbstractPage {
 		int positionDot = text.indexOf(".");
 		return text.substring(0, positionDot).toLowerCase();
 	}
+	
+	public MainPage goToMainPage() {
+		driver.findElement(By.xpath("//div[@id='b-nav_folders']/div/div[1]/a")).click();
+		return new MainPage(driver);
+	}
 
 }

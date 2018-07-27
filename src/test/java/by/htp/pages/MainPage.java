@@ -1,6 +1,7 @@
 package by.htp.pages;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
 
@@ -36,9 +37,13 @@ public class MainPage extends AbstractPage {
 		return textSend;
 	}
 	
+	public void findOutbox() {
+		driver.findElement(By.xpath("//div[@id='b-nav_folders']/div/div[2]/a")).click();
+	}
+	
 	public List<WebElement> findSendingMessages() {
-		driver.findElement(By.xpath("//div[@id='b-nav_folders']/div/div[2]/a"));
-		List<WebElement> list = driver.findElements(By.xpath("//div[@class='b-datalist__item__addr']"));	
+		List<WebElement> list = driver.findElements(By.xpath("//*[@id=\"b-letters\"]/div/div[5]/div/div[2]/div[1]/div/a/div[4]/div[3]/div[2]"));
+		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		return list;
 	}
 }

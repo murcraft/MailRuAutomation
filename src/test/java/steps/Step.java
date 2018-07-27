@@ -1,8 +1,11 @@
 package steps;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import by.htp.driver.DriverSingleton;
 import by.htp.pages.ComposeMessage;
@@ -44,12 +47,29 @@ public class Step {
 		compMessage.fillDestinationAddress();
 		compMessage.findFrameTextEmail();
 		compMessage.sendMessage();
-		
 	}
 	
 	public String descriptionOfConfirm() {
 		ComposeMessage compMessage = new ComposeMessage(driver);
 		return compMessage.getSendingConfirm();
+	}
+	
+	public MainPage linkToInboxPage() {
+		ComposeMessage compMessage = new ComposeMessage(driver);
+		return compMessage.goToMainPage();
+	}
+	
+	public String goToSendMessages() {
+		MainPage page = linkToInboxPage();
+		driver.switchTo().defaultContent();
+		page.findOutbox();
+		List<WebElement> list = page.findSendingMessages();
+		String email = "";
+		for(WebElement el : list) {
+			email = el.getText();
+			System.out.println(email);
+		}
+		return email;
 	}
 
 

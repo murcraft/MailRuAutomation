@@ -23,7 +23,7 @@ public class DriverSingleton {
             driver.manage().timeouts().pageLoadTimeout(5000, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
 //          driver.manage().window().maximize();
-//            driver.manage().window().fullscreen();
+//          driver.manage().window().fullscreen();
             logger.info("Browser started");
         }
         return driver;
