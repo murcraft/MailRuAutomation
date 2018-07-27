@@ -12,7 +12,7 @@ public class DriverSingleton {
     private static WebDriver driver;
     private static final Logger logger = LogManager.getRootLogger();
     private static final String WEBDRIVER_CHROME = "webdriver.chrome.driver";
-    private static final String CHROME_PATH = "../../../Applications/chromedriver";
+    private static final String CHROME_PATH = "C:\\Program Files\\chromedriver.exe";//"../../../Applications/chromedriver";
 
     private DriverSingleton(){};
 
@@ -22,7 +22,8 @@ public class DriverSingleton {
             driver = new ChromeDriver();
             driver.manage().timeouts().pageLoadTimeout(5000, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
-            driver.manage().window().fullscreen();
+//          driver.manage().window().maximize();
+//            driver.manage().window().fullscreen();
             logger.info("Browser started");
         }
         return driver;
