@@ -8,7 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import by.htp.driver.DriverSingleton;
+<<<<<<< HEAD
 import by.htp.pages.ComposeMessage;
+=======
+import by.htp.pages.ComposePage;
+>>>>>>> 741ae21b29fcfe21d1c39149e12a8496018382fe
 import by.htp.pages.LoginPage;
 import by.htp.pages.MainPage;
 
@@ -34,10 +38,38 @@ public class Step {
 
 	public boolean isLoggedIn(String username) {
 		LoginPage loginPage = new LoginPage(driver);
+<<<<<<< HEAD
 		System.out.println(loginPage.getUrlMainPage());
+=======
+		System.out.println(loginPage.getDriver().getCurrentUrl());
+>>>>>>> 741ae21b29fcfe21d1c39149e12a8496018382fe
 		String actualUsername = loginPage.getLoggedInUserName().trim().toLowerCase();
 		logger.info("Actual username: " + actualUsername);
 		return actualUsername.equals(username);
+	}
+	
+	public boolean isMessagesInbox(String newEmail) {
+		MainPage mainPage = new MainPage(driver );
+		System.out.println(mainPage.getDriver().getCurrentUrl());
+		String actualPage = mainPage.getMainPageSend();
+		logger.info("Actual page: " + actualPage);
+		return actualPage.contains(newEmail);
+	}
+	
+	public void pressSendEmail() {
+		
+	}
+	
+	public void sendEmail() {
+		MainPage mainPage = new MainPage(driver);
+		ComposePage composePage = mainPage.findMessage();;
+		composePage.fillDestinationAddress(); 
+		composePage.findFrameTextEmail();
+		
+	}
+	
+	public boolean isSendBoxEmpty() {
+		return true;
 	}
 
 	public void composeMessage() {
