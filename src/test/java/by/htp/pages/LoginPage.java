@@ -28,7 +28,6 @@ public class LoginPage extends AbstractPage {
 		logger.info("Login performed");
 	}
 	
-<<<<<<< HEAD
 	public void login(String username, String password) {
 		driver.switchTo().frame(driver.findElement(By.className("ag-popup__frame__layout__iframe")));
 		fillLogin(username);
@@ -48,20 +47,6 @@ public class LoginPage extends AbstractPage {
 		inputPassword = driver.findElement(By.xpath("*//div[@class='login-row password']/descendant::input[@class='c0146']"));
 		inputPassword.clear();
 		inputPassword.sendKeys(password);
-=======
-	public void login(String username, String pass) {
-		driver.switchTo().frame(driver.findElement(By.className("ag-popup__frame__layout__iframe")));
-		inputLogin = driver.findElement(By.xpath("*//div[@class='login-row username']/descendant::input[@class='c0146']"));
-		inputLogin.clear();
-		inputLogin.sendKeys("tathtp");
-
-		inputPassword = driver.findElement(By.xpath("*//div[@class='login-row password']/descendant::input[@class='c0146']"));
-		inputPassword.clear();
-		inputPassword.sendKeys("Klopik123");
-		
-		buttonSubmit = driver.findElement(By.xpath("//div[@class='c0130 c0131']/descendant::button"));
-		buttonSubmit.click();
->>>>>>> 741ae21b29fcfe21d1c39149e12a8496018382fe
 	}
 	
 	public String getLoggedInUserName() {
@@ -71,16 +56,10 @@ public class LoginPage extends AbstractPage {
 		return currentUser;
 	}
 	
-<<<<<<< HEAD
 	public String getUrlMainPage() {		
 		return driver.getCurrentUrl();
-=======
-	public String getMessagesInbox() {
-		String currentUrl = driver.getCurrentUrl();
-		return currentUrl;
->>>>>>> 741ae21b29fcfe21d1c39149e12a8496018382fe
 	}
-	
+
 
 
 }
