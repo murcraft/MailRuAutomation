@@ -23,9 +23,6 @@ public class LoginPage extends AbstractPage {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
 	}
-	
-
-
 
 	@Override
 	public void open() {
@@ -39,14 +36,12 @@ public class LoginPage extends AbstractPage {
 		inputLogin = driver.findElement(By.xpath("*//div[@class='login-row username']/descendant::input[@class='c0146']"));
 		inputLogin.sendKeys("tathtp");
 		
-		buttonSubmit = driver.findElement(By.xpath("*//div[@class='login-row password']/descendant::input[@class='c0146']"));
-		buttonSubmit.click();
-		driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+//		buttonSubmit = driver.findElement(By.xpath("*//div[@class='login-row password']/descendant::input[@class='c0146']"));
+//		buttonSubmit.click();
 		inputPassword = driver.findElement(By.xpath("*//div[@class='login-row password']/descendant::input[@class='c0146']"));
 		inputPassword.sendKeys("Klopik123");
 		buttonSubmit = driver.findElement(By.xpath("//div[@class='c0130 c0131']/descendant::button"));
 		buttonSubmit.click();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	public String getLoggedInUserName() {
@@ -55,6 +50,5 @@ public class LoginPage extends AbstractPage {
 		currentUser.matches("^[A-Za-z]*");
 		return linkLoggedInUser.getAttribute("content");
 	}
-	
 
 }
