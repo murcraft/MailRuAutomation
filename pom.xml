@@ -8,15 +8,17 @@
 	  <maven.compiler.sourse>10</maven.compiler.sourse>
 	  <maven.compiler.target>10</maven.compiler.target>
   </properties>
+      
   
   <dependencies>
+  
+
   	<dependency>
     	<groupId>org.seleniumhq.selenium</groupId>
     	<artifactId>selenium-java</artifactId>
     	<version>3.11.0</version>
 	</dependency>
 	
-	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 	<dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
@@ -42,4 +44,18 @@
 	</dependency>
 		
    </dependencies>
+   <build>
+   <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.0</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+</plugins>
+   </build>
 </project>
